@@ -1,0 +1,135 @@
+:root {
+  --bg-top: #ffe7cc;
+  --bg-bottom: #ffd4da;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --text: #2b1f2b;
+  --muted: #6d5b6f;
+  --yes: #2f9e44;
+  --yes-hover: #24893a;
+  --no: #d94848;
+  --no-hover: #c83e3e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(155deg, var(--bg-top), var(--bg-bottom));
+  color: var(--text);
+  font-family: "Manrope", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(75, 26, 49, 0.15);
+  text-align: center;
+}
+
+.banner-gif img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 16px;
+}
+
+.eyebrow {
+  margin: 16px 0 8px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#question-heading {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.1;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+}
+
+.buttons {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 12px 22px;
+  min-height: 44px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.02);
+}
+
+#yes-button {
+  background-color: var(--yes);
+}
+
+#yes-button:hover {
+  background-color: var(--yes-hover);
+}
+
+#no-button {
+  background-color: var(--no);
+}
+
+#no-button:hover {
+  background-color: var(--no-hover);
+}
+
+.message {
+  display: none;
+  margin-top: 24px;
+}
+
+#success-message {
+  margin: 0 0 8px;
+  font-size: clamp(24px, 4vw, 32px);
+}
+
+.message p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    max-width: 220px;
+  }
+}
